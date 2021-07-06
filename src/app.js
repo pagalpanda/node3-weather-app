@@ -8,6 +8,7 @@ const { response } = require('express')
 
 
 const app = express()
+const port = process.env.PORT || 3000 // Set by Heroku || 3000 for local
 
 
 // console.log(__dirname) // Path to current dir
@@ -97,6 +98,6 @@ app.get('*', (req, res) => {
     })
 })
 
-app.listen(3000, () => {
-    console.log('Server Started at 3000')
+app.listen(port, () => {
+    console.log('Server Started at ' + port)
 })
