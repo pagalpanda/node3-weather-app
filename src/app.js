@@ -61,14 +61,14 @@ app.get('/weather', (req, res) => {
             return res.send({error: error})
         }
         
-        weather(latitude, longitude, (error, {description, temperature, feelslike} = {})=> {
+        weather(latitude, longitude, (error, {description, temperature, feelslike, humidity} = {})=> {
             if(error) {
                 console.log('Error', error)
                 return res.send({error}) 
             }
             console.log(chalk.green(location))
             const forecast = description + ' Temparature '+ temperature + 
-            ' Feels like ' + feelslike
+            ' Feels like ' + feelslike + '. The humidity is ' + humidity + '%.'
             console.log(chalk.inverse.italic(forecast))
             res.send({
                 forecast,

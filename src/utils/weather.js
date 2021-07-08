@@ -13,7 +13,8 @@ const weather = (lat, long, callback) => {
                 callback(undefined, {
                     description: current.weather_descriptions[0],
                     temperature: current.temperature,
-                    feelslike: current.feelslike
+                    feelslike: current.feelslike,
+                    humidity: current.humidity
                 })
             }
         }
